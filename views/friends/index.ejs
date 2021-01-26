@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Friends</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mb-4">Friends Info</h1>
+        <a href="friends/new" class="btn btn-success">New Friend</a>
+
+        <% friends.forEach(friend=> { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4 class="card-title"><%= friend.name %></h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Games</h5>
+                    <ul class="list-group">
+                        <% friend.games.map(game=> { %>
+                            <li class="list-group-item">
+                                <%= game %>
+                            </li>
+                            <% }) %>
+                    </ul>
+                </div>
+                
+            </div>
+        <% }) %>
+    </div>
+</body>
+
+</html>
